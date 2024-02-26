@@ -195,7 +195,7 @@ while True:
         #|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REDATOR!||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
         def ask_question(question):
-            openai.api_key = os.getenv("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")
+            openai.api_key = "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"
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo-0613",
                 messages=[{"role": "user", "content": question}],
@@ -218,8 +218,8 @@ while True:
 
         # Set up the WordPress site details and authentication
         url = "https://noiteassombrada.serv00.net/wp-json/wp/v2"
-        user = os.getenv('noiteassombrada')
-        password = os.getenv("RFae zZcT QITl 9bgK Io8g JbJf")
+        user = 'noiteassombrada'
+        password = "RFae zZcT QITl 9bgK Io8g JbJf"
 
         creds = user + ':' + password
 
