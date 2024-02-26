@@ -6,17 +6,6 @@ from requests.exceptions import Timeout
 
 
 titulo_anterior_path = "titulo_anterior.txt"
-def ler_titulo_anterior():
-    if os.path.exists(titulo_anterior_path):
-        with open(titulo_anterior_path, 'r') as file:
-            return file.read().strip()
-    else:
-        return ""
-def salvar_titulo_anterior(titulo):
-    with open(titulo_anterior_path, 'w') as file:
-        file.write(titulo)
-
-titulo_anterior = ler_titulo_anterior()
 
 
 
@@ -152,19 +141,42 @@ while True:
     html_string = str(noticia_link)
     url_imagem = extrair_url_imagem(html_string)
     print(url_imagem)
-
-
-
-
-
     imagem_noticia = url_imagem
-
-
     print(imagem_noticia)
 
-    if titulo != titulo_anterior:
+
+
+    #   
+    def ler_titulo_anterior():
+        if os.path.exists(titulo_anterior_path):
+            with open(titulo_anterior_path, 'r') as file:
+                return file.read().strip()
+        else:
+            return ""
+    def salvar_titulo_anterior(titulo):
+        with open(titulo_anterior_path, 'w') as file:
+            file.write(titulo)
+    titulo_anterior = ler_titulo_anterior()
+    def normalizar_titulo(titulo):
+        # Remover espaços extras
+        titulo = titulo.strip()
+        # Converter para minúsculas
+        titulo = titulo.lower()
+        # Remover caracteres especiais ou de pontuação (se necessário)
+        # titulo = re.sub(r'\W+', ' ', titulo)
+        return titulo
+    
+    titulo_normalizado = normalizar_titulo(titulo)
+    titulo_anterior_normalizado = normalizar_titulo(titulo_anterior)
+
+    if titulo_normalizado != titulo_anterior_normalizado:
         # Faz o download da imagem
         print("Nova notícia encontrada:", titulo)
+
+
+
+        print("Título da Notícia:", titulo)
+        print("Título Anterior:", titulo_anterior)
         try:
             response = requests.get(imagem_noticia)
             response.raise_for_status()
@@ -311,29 +323,3 @@ while True:
     else:
         print("Não tem postagens novas...")
         time.sleep(21600 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
