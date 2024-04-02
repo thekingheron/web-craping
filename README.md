@@ -10,7 +10,7 @@ O objetivo deste projeto é automatizar a busca por novidades no site "Noite Ass
 
 - **Coleta de Dados:** O bot faz solicitações HTTP ao endpoint do site "Noite Assombrada" para obter informações sobre as últimas notícias.
 - **Extração de Conteúdo:** As notícias são extraídas do site principal, incluindo título, subtítulo, horário, conteúdo e imagem.
-- **Processamento de Texto:** O conteúdo das notícias é processado para reescrever o texto de forma mais empolgante e remove menções ao site "OVNI Hoje".
+- **Processamento de Texto:** O conteúdo das notícias é processado usando inteligencia artificial para reescrever o texto de forma mais empolgante e remove menções ao site.
 - **Publicação Automática:** As notícias são publicadas automaticamente em um site WordPress.
 - **Agendamento:** O bot é executado periodicamente para verificar novas notícias a cada seis horas.
 
