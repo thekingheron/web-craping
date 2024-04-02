@@ -15,7 +15,7 @@ timeout = 10
 
 try:
     # Faz uma solicitação HTTP com um objeto timeout personalizado
-    response = urllib.request.urlopen('https://noiteassombrada.serv00.net/wp-json/wp/v2/posts', timeout=timeout)
+    response = urllib.request.urlopen('https://wordpress-site.com/wp-json/wp/v2/posts', timeout=timeout)
 
     # Print the response from the REST API
     print(response)
@@ -46,7 +46,7 @@ while True:
 
     # Aguardar 1 segundo antes de imprimir a hora novamente
     time.sleep(1)
-    response = requests.get('https://ovnihoje.com/') #SITE COMPLETO
+    response = requests.get('https://nomedosite.com/') #SITE COMPLETO
     content = response.content #DIZER O QUE INTERESSA NA PÁGINA = CONTEÚDO
     site = BeautifulSoup(content,'html.parser') #CONVERSÃO DO CONTEÚDO PARA HTML
     novidade = site.find('div', attrs={'class': 'item-inner'}) #OBTER CONTEÚDO DO DIV "INTER-INNER"(NO CASO, DAS NOVIDADES)
@@ -207,7 +207,7 @@ while True:
         #|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REDATOR!||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
         def ask_question(question):
-            openai.api_key = "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"
+            openai.api_key = "Seu token da OPENAI(GPT)"
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo-0613",
                 messages=[{"role": "user", "content": question}],
@@ -229,9 +229,9 @@ while True:
 
 
         # Set up the WordPress site details and authentication
-        url = "https://noiteassombrada.serv00.net/wp-json/wp/v2"
-        user = 'noiteassombrada'
-        password = "RFae zZcT QITl 9bgK Io8g JbJf"
+        url = "wordpress-site.com/wp-json/wp/v2"
+        user = 'username' #Nome do usuário do wordpress
+        password = "Senha de aplicativo" #Senha criada para cada usuário "PAINEL -> Usuários -> (Clica no usuário) -> Criar senha de aplicativo, por exemplo: RFae zZcT QITl 9bgK Io8g JbJf
 
         creds = user + ':' + password
 
