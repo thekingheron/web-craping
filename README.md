@@ -40,7 +40,7 @@ Contribuições são bem-vindas! Se você quiser melhorar este projeto, siga est
 
 ## Contato
 
-Você pode me contatar diretamente por [e-mail](mailto:seuemail@exemplo.com) ou através do meu perfil do [GitHub](https://github.com/seuusuario). 
+Você pode me contatar diretamente por [e-mail](mailto:agenciaanonimatto@gmailcom) ou através do meu perfil do [GitHub](https://github.com/thekingheron). 
 
 ## Licença
 
